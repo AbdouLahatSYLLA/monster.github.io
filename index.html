@@ -1,0 +1,89 @@
+<!--
+	Vie et mort d'un monstre
+	@author       : Daniel THARMARAJAH 12000230 (TP1) et Abdou lahat sylla 12011836 (TP3)
+	Created       : < 2020
+	Last modified : 2023/02/13
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vie et mort d'un monstre</title>
+    <link rel="stylesheet" href="css/monster.css">
+    <link rel="stylesheet" media="screen and (max-width : 600px) " href="css/monster_mobile.css">
+
+</head>
+
+<body>
+    <h1>Vie et mort d’un monstre</h1>
+
+    <div id="space-jeu">
+
+        <canvas id="canva" width="900" height="300">  
+         
+  </canvas>
+    </div>
+    <div id="actionbox" class="monster">
+        <p>Monster life log</p>
+    </div>
+
+    <ul id="statut">
+        <li> Vie:
+            <progress value="20" max="20"> 
+            </progress>
+        </li>
+        <li>Argent : 0</li>
+        <li>Éveillé</li>
+        <li>Score </li>
+        <li>Meilleur score </li>
+    </ul>
+    <div id="actions1">
+        <button id="run">&#x1F3C3;</button>
+        <button id="fight">&#x1F94A;</button>
+        <button id="work">&#x1F477;</button>
+        <button id="sleep">&#x1F634;</button>
+        <button id="son">Activer son</button>
+    </div>
+    
+    <div id="actions2">
+        <button id="new">&#x2764;</button>
+        <button id="kill">&#x274C;</button>
+        <button id="eat">&#x1F354;</button>
+        <button id="show">&#129309;</button>
+    </div>
+    <audio id="mort">
+        <source src="audios/kill.mp3" type="audio/mpeg">
+        <source src="audios/kill.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios    
+    </audio>
+    <audio id="mange">
+        <source src="audios/eat.mp3" type="audio/mpeg">
+        <source src="audios/eat.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios
+    </audio>
+    <audio id="bat">
+        <source src="audios/fight.mp3" type="audio/mpeg">
+        <source src="audios/fight.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios    
+    </audio>
+    <audio id="court">
+        <source src="audios/run.mp3" type="audio/mpeg">
+        <source src="audios/run.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios
+    </audio>
+    <audio id="dort">
+        <source src="audios/sleep.mp3" type="audio/mpeg">
+        <source src="audios/sleep.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios
+    </audio>
+    <audio id="taff">
+        <source src="audios/work.mp3" type="audio/mpeg">
+        <source src="audios/work.mp3" type="audio/ogg">
+        Votre navigateur ne prend pas en charge les audios
+    </audio>
+
+    <script src="js/monster.js"></script>
+</body>
+
+</html>
