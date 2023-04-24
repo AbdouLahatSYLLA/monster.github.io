@@ -1,15 +1,6 @@
-/************************************************************/
-
-
-/**
- * Université Sorbonne Paris Nord, Programmation Web
- * Auteurs                       : Étienne André et al.
- * Création                      : <2020
- * Dernière modification         : 2023/02/13
- */
-
-
-/************************************************************/
+/* Daniel THARMARAJAH 12000230 (TP1)
+ * Abdou lahat sylla 12011836 (TP3)
+ **/
 let name, life, money, awake, dead, score, bestScore = 0;
 let i = 0;
 let run, fight, work, sleep, eat, show, newLife, kill;
@@ -17,7 +8,7 @@ let actions, boite, status, monstre;
 let son_active;
 let active = false;
 const max_Life = 20;
-let rando, changecol, pts;
+let rando, changecol,pts;
 let imageSrc = 'images/monstre_court.png';
 let monImg; // variable pour que le changement d'image soit instantanné
 let lock = false; // pour l'utiliser comme avec les semaphores
@@ -61,7 +52,7 @@ function courir() {
     } else {
         life -= 3;
     }
-    if (active) {
+    if(active){
         document.getElementById("court").play()
     }
     logBoite("Le monstre court");
@@ -84,7 +75,7 @@ function seBattre() {
         logBoite("Le monstre risque d'y laisser la vie");
         rando = setInterval(actionauhasard, 2500);
     }
-    if (active) {
+    if(active){
         document.getElementById("bat").play()
     }
     if (score > 10 && score < 30) {
@@ -113,7 +104,7 @@ function seBattre() {
 
 function manger() {
     if (money > 3) {
-        if (active) {
+        if(active){
             document.getElementById("mange").play()
         }
         life += 2;
@@ -145,7 +136,7 @@ function travailler() {
     } else {
         life -= 3;
     }
-    if (active) {
+    if(active){
         document.getElementById("taff").play()
     }
     money += 2;
@@ -164,7 +155,7 @@ function travailler() {
 }
 
 function dormir() {
-    if (active) {
+    if(active){
         document.getElementById("dort").play()
     }
     desactiver_bouton();
@@ -218,8 +209,8 @@ function go() {
     sleep.addEventListener('click', () => actionCliquee(dormir));
     kill.addEventListener('click', () => actionCliquee(mort));
     newLife.addEventListener('click', () => actionCliquee(comeBack));
-    son_active.addEventListener('click', (e) => {
-        active = (active === true) ? false : true;
+    son_active.addEventListener('click',(e) =>{
+        active = (active === true) ? false : true ;
         e.target.style.backgroundColor = active ? 'green' : 'red';
     })
 
@@ -264,7 +255,7 @@ function actionauhasard() {
 }
 
 function mort() {
-    if (active) {
+    if(active){
         document.getElementById("mort").play()
     }
     dead = true;
@@ -316,7 +307,7 @@ function majScore() {
         score += 1;
         if (score >= bestScore) {
             bestScore = score;
-        }
+        }        
     }, 1500)
 }
 
